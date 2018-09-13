@@ -8,6 +8,7 @@
 
 <script>
 import { Logger } from "./../js/logger";
+import { unaPromise} from "./../js/promises";
 export default {
   name: "MainContainer",
   props: {
@@ -17,6 +18,7 @@ export default {
   methods: {
     mostrarMensaje: function() {
       Logger.log("Boton Clickeado");
+      unaPromise().then( (mensaje) => alert(mensaje));
     }
   }
 };
@@ -37,5 +39,17 @@ li {
 }
 a {
   color: #42b983;
+}
+button {
+    border: 2px solid  #2c3e50;
+    background-color: white;
+    padding: 8px;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover {
+    background-color: rgb(104, 255, 197);
 }
 </style>
